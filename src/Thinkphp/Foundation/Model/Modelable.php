@@ -17,13 +17,14 @@ use Xin\Support\SQL;
  */
 trait Modelable
 {
-	/**
-	 * Append attributes to query when building a query.
-	 *
-	 * @param array $append
-	 * @return $this
-	 */
-	public function append(array $append = [])
+    /**
+     * Append attributes to query when building a query.
+     *
+     * @param array $append
+     * @param bool $merge
+     * @return $this
+     */
+	public function append(array $append = [], bool $merge = false)
 	{
 		$this->append = array_unique(
 			array_merge($this->append, $append)
